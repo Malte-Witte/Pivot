@@ -1,0 +1,20 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "pivot::tables.TABLE1",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "pivot::TABLE1.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "MATERIAL",
+					"PROZESSSCHRITT",
+					"KENNZAHL"
+                ]
+            }
+        }
+    ]
+}

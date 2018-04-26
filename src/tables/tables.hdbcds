@@ -1,0 +1,11 @@
+namespace pivot;
+
+context tables {
+
+    /*@@layout{"layoutInfo":{"x":117,"y":215.5}}*/
+    entity TABLE1 {
+        MATERIAL       : String(10);
+        PROZESSSCHRITT : String(10);
+        KENNZAHL       : Decimal(10, 2);
+    };
+};

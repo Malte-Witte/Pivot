@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="pivot::CV_C_PIVOT" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_C_PIVOT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="pivot::tables.TABLE1">
+    <resourceUri>pivot::tables.TABLE1</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIVOT">
+    <viewAttributes>
+      <viewAttribute id="MATERIAL">
+        <descriptions defaultDescription="MATERIAL"/>
+      </viewAttribute>
+      <viewAttribute id="PROZESSSCHRITT">
+        <descriptions defaultDescription="PROZESSSCHRITT"/>
+      </viewAttribute>
+      <viewAttribute id="KENNZAHL" aggregationType="sum">
+        <descriptions defaultDescription="KENNZAHL"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PS1" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 1 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS2" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 2 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS3" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 3 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS4" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 4 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS5" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 5 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS6" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 6 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS7" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 7 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PS8" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;PROZESSSCHRITT&quot; WHEN 8 THEN &quot;KENNZAHL&quot; ELSE 0 END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="pivot::tables.TABLE1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL" source="MATERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROZESSSCHRITT" source="PROZESSSCHRITT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KENNZAHL" source="KENNZAHL"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="PIVOT">
+  <attributes>
+    <attribute id="MATERIAL" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="PIVOT" columnName="MATERIAL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="PS1" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS1"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS1"/>
+    </measure>
+    <measure id="PS2" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS2"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS2"/>
+    </measure>
+    <measure id="PS3" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS3"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS3"/>
+    </measure>
+    <measure id="PS4" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS4"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS4"/>
+    </measure>
+    <measure id="PS5" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS5"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS5"/>
+    </measure>
+    <measure id="PS6" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS6"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS6"/>
+    </measure>
+    <measure id="PS7" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS7"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS7"/>
+    </measure>
+    <measure id="PS8" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PS8"/>
+      <measureMapping columnObjectName="PIVOT" columnName="PS8"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PIVOT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="214"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
